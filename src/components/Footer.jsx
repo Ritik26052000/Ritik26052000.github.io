@@ -12,7 +12,7 @@ const Footer = () => {
           href="https://github.com/Ritik26052000"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-link contact-github"
+          className="contact-github"
         >
           <FaGithub />
         </a>
@@ -20,7 +20,7 @@ const Footer = () => {
           href="https://www.linkedin.com/in/ritik-sonwani-son/"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-link contact-linkedin"
+          className="contact-linkedin"
         >
           <FaLinkedin />
         </a>
@@ -28,7 +28,7 @@ const Footer = () => {
           href="mailto:anshusonwani2605@gmail.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="nav-link contact-email"
+          className="contact-email"
         >
           <GrMail />
         </a>
