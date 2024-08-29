@@ -1,7 +1,6 @@
 import React from "react";
 import Skills from "./Skills";
-import profile from "../images/profile.png";
-
+import profile from "../images/profile.jpg";
 
 const About = () => {
   return (
@@ -28,28 +27,10 @@ const About = () => {
         </div>
 
         <img
-          src={profile}  // Replace with your actual static image path
+          src={profile} // Replace with your actual static image path
           className="home-img"
           alt="Profile"
         />
-      </div>
-
-      <h1 className="skills-heading">Professional Skillset</h1>
-      <div className="skills-section" id="skills">
-        <Skills skill="React" />
-        <Skills skill="Node" />
-        <Skills skill="Java" />
-        <Skills skill="Express" />
-        <Skills skill="MongoDb" />
-        <Skills skill="Git" />
-        <Skills skill="Github" />
-        <Skills skill="Javascript" />
-        <Skills skill="C++" />
-        <Skills skill="Thunderclient" />
-        <Skills skill="Figma" />
-        <Skills skill="Netlify" />
-        <Skills skill="Npm" />
-        <Skills skill="Bootstrap" />
       </div>
     </>
   );

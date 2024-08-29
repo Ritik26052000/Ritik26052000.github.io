@@ -69,13 +69,13 @@ const Nav = () => {
           </Link>
         </li>
         <li onClick={hideMenu}>
-          <Link to="#skills" className="nav-link skills">
+          <Link to="/skills" className="nav-link skills">
             {" "}
             <BsCodeSlash /> Skills
           </Link>
         </li>
         <li onClick={hideMenu}>
-          <Link to="#contact" className="nav-link contact">
+          <Link to="/contact" className="nav-link contact">
             {" "}
             <CgFileDocument /> Contact
           </Link>

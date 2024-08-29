@@ -16,7 +16,7 @@ export const Home = () => {
           <Typed />
         </div>
 
-        <Lottie className="home-img" animationData={SpaceBoy} loop={true} />
+        <Lottie animationData={SpaceBoy} loop={true} />
       </div>
 
       <div id="about" className="about-section">

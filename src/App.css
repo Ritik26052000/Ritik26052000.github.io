@@ -23,7 +23,6 @@ body {
   background-color: #031926;
   color: #e7e7e7;
   min-height: 100vh;
-  margin-top: -2400px;
 }
 
 b {
@@ -317,6 +316,7 @@ b {
 }
 
 /* Skills section */
+
 .skills-section {
   display: flex;
   flex-wrap: wrap;
@@ -343,7 +343,7 @@ b {
 
 .skills-heading {
   text-align: center;
-  margin: 50px 10px;
+  margin: 100px 10px;
   font-size: 36px;
   letter-spacing: 0.6px;
 }
@@ -458,6 +458,7 @@ b {
 /* Resume */
 .resume-section {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 80vh;
@@ -467,9 +468,13 @@ b {
 .resume-view {
   border: 1px solid #9067c6;
   width: 70%;
-  height: 600px;
+  height: auto;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.resume-section>a{
+  text-decoration: none;
 }
 
 .download-cv {
@@ -526,4 +531,102 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.contact-section {
+  padding: 50px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full viewport height */
+}
+
+.contact-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.contact-animation img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Deeper shadow for a 3D effect */
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.contact-animation img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.contact-form {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px; /* Softer rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Deeper shadow */
+  max-width: 600px; /* Fixed max-width for better layout */
+  width: 100%;
+  margin: 0 auto;
+  animation: fadeIn 0.5s ease-in-out; /* Fade-in animation */
+}
+
+.contact-form h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center; /* Center the heading */
+}
+.form-label {
+  font-weight: bold;
+  color: #444; /* Darker color for labels */
+  margin-bottom: 20px;
+  margin-right: 20px;
+}
+
+.contact-form .form-control {
+  border: 1px solid #ddd;
+  width: 100%;
+  border-radius: 6px;
+  padding: 12px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.contact-form .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3); /* Blue glow on focus */
+}
+
+.contact-form .btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  width: 100%;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth background transition */
+}
+
+.contact-form .btn-primary:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px); /* Button lift effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Shadow on hover */
+}
+
+.contact-form .btn-primary .fa-paper-plane {
+  margin-right: 5px; /* Spacing between icon and text */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
