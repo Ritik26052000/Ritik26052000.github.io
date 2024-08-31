@@ -20,15 +20,14 @@ import Footer from "./components/Footer";
 import { Home } from "./components/Home";
 import Contact from "./components/Contact";
 import Skills from "./components/Skills";
+import ResumeButton from "./components/ResumeButton";
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading delay
     setTimeout(() => setLoading(false), 1900);
 
-    // Cleanup function to remove event listeners
     return () => clearTimeout();
   }, []);
 
@@ -47,16 +46,22 @@ function App() {
       ) : (
         <div>
           <Nav />
+          {/* <MoveToTop /> */}
+          <Home />
+          <About />
+          <Projects />
+          <Skills />
+          <Contact />
+          
 
-          <Routes>
+          {/* <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/About" element={<About />} />
-            <Route path="/Projects" element={<Projects />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
             <Route path="/skills" element={<Skills />} />
-            <Route path="/Resume" element={<Resume />} />
+            <Route path="/resume" element={<Resume />} />
             <Route path="/contact" element={<Contact />} />
-          </Routes>
-
+          </Routes> */}
           <Footer />
         </div>
       )}

@@ -22,7 +22,7 @@ const Resume = () => {
   }, []);
 
   return (
-    <div className="resume-section">
+    <div className="resume-section" id="resume">
       <Document file={pdf} className="resume-view">
         <Page pageNumber={1} scale={wid < 770 ? (wid > 475 ? 0.7 : 0.5) : 2} />
       </Document>

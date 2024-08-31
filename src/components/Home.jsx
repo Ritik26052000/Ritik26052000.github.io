@@ -3,10 +3,11 @@ import Avatar from "../images/Avatar.png";
 import SpaceBoy from "../LottieFiles/SpaceBoy.json";
 import Typed from "./Typed";
 import Lottie from "lottie-react";
+import ResumeButton from "./ResumeButton";
 
 export const Home = () => {
   return (
-    <div>
+    <div className="home_container">
       <div className="home-page" id="home">
         <div className="HomeText">
           <h1>Hi There!</h1>
@@ -14,12 +15,14 @@ export const Home = () => {
             I'M <b>Ritik Sonwani</b>
           </h1>
           <Typed />
+
+          <ResumeButton />
         </div>
 
         <Lottie animationData={SpaceBoy} loop={true} />
       </div>
 
-      <div id="about" className="about-section">
+      <div className="about-section">
         <div className="about-text">
           <h1 className="about-heading">
             Brief <b>introduction</b>

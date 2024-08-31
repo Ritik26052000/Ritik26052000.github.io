@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer>
       <h4>Developed by Ritik Sonwani</h4>
-      <h4>Copyright &copy; 2023 RS</h4>
+      <h4>Copyright &copy; 2024 RS</h4>
       <div className="footer-links">
         <a
           href="https://github.com/Ritik26052000"

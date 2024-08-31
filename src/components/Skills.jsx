@@ -19,6 +19,7 @@ import {
   SiVercel,
 } from "react-icons/si";
 import { AiFillThunderbolt } from "react-icons/ai";
+import Github from "./Github";
 
 // Separate component for individual skill icons
 const SkillIcon = ({ skill, icon }) => (
@@ -48,12 +49,18 @@ const Skills = () => {
 
   return (
     <React.Fragment>
-      <h1 className="skills-heading">Professional Skillset</h1>
-      <div className="skills-section" id="skills">
-        {skillIcons.map((skill, index) => (
-          <SkillIcon key={index} skill={skill.name} icon={skill.icon} />
-        ))}
+      <div className="skills-section">
+        <h1 className="skills-heading" id="skills">
+          Professional Skillset
+        </h1>
+        <div className="new_skill">
+          {skillIcons.map((skill, index) => (
+            <SkillIcon key={index} skill={skill.name} icon={skill.icon} />
+          ))}
+        </div>
+        <Github />
       </div>
+      
     </React.Fragment>
   );
 };
