@@ -525,6 +525,31 @@ b {
   }
 }
 
+.tech-stack {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.tech-stack h4 {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.tech-stack ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.tech-stack li {
+  display: inline-block;
+  background-color: #431e47;
+  color: #f7f7f8;
+  margin: 3px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
 /* Resume */
 .resume-section {
   display: flex;

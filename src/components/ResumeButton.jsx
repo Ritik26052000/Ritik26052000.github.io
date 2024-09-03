@@ -10,7 +10,7 @@ const ResumeButton = () => {
     // Create a temporary link to trigger the download
     const link = document.createElement("a");
     link.href = pdf;
-    link.download = "resume.pdf"; // Trigger download
+    link.download = "RitikSonwani.pdf"; // Trigger download
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
