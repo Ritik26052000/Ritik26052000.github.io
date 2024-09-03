@@ -22,6 +22,8 @@ import Contact from "./components/Contact";
 import Skills from "./components/Skills";
 import ResumeButton from "./components/ResumeButton";
 
+
+
 function App() {
   const [loading, setLoading] = useState(true);
 

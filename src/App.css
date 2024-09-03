@@ -571,6 +571,7 @@ footer {
   margin: 10px auto;
   margin-top: 80px;
   letter-spacing: 0.5px;
+  font-size: 30px;
 
   display: flex;
   flex-wrap: wrap;
@@ -610,8 +611,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Full viewport height */
-  /* Optional: Adding background color */
+  min-height: 100vh;
 }
 
 .contact-animation {
@@ -717,4 +717,20 @@ footer {
   .form-label {
     font-size: 14px;
   }
+}
+
+.center-container {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.center-col {
+  text-align: center; /* Center the text inside the column */
+}
+
+.no-text-decoration {
+  text-decoration: none;
 }
