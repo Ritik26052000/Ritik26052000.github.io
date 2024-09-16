@@ -4,17 +4,56 @@ import { CgFileDocument } from "react-icons/cg";
 
 const ProjectBox = ({ projectPhoto, projectName }) => {
   const desc = {
+    DocEase: {
+      Description:
+        "DocEase is a powerful document management application inspired by Notion Docs. It allows users to create, organize, and collaborate on documents in a flexible, user-friendly environment. With features like real-time collaboration, document versioning, and a rich text editor, DocEase aims to simplify and enhance the way you manage your notes, projects, and ideas.",
+      TechStack: [
+        "JavaScript",
+        "React",
+        "Git",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "HTML5",
+        "CSS3",
+        "Responsive Web Design",
+        "NPM",
+        "ReactQuill",
+      ],
+      Github: "https://github.com/Mayank8683/Cloud-Climbers_045.git",
+      Website:
+        "https://66d587c1d92965dc325710f8--meek-meringue-871a76.netlify.app/",
+    },
     ER_Diagram: {
       Description:
         "ER diagram looks very similar to the flowchart. However, ER Diagram includes many specialized symbols, and its meanings make this model unique. The purpose of ER Diagram is to represent the logical structure & entity framework infrastructure.",
-      TechStack: ["React", "Redux", "Github", "Netlify", "JavaScript", "NPM", "Chakra ui", "React-flow", "authO"],
+      TechStack: [
+        "React",
+        "Redux",
+        "Github",
+        "Netlify",
+        "JavaScript",
+        "NPM",
+        "Chakra ui",
+        "React-flow",
+        "authO",
+      ],
       Github: "https://github.com/PKalyanReddy/Declaration-DevOps_032.git",
       Website: "https://er-diagram-builder01.netlify.app/",
     },
     Music: {
       Description:
         "Embarking on a mission to revolutionize the music streaming landscape, our team has set out to develop a cutting-edge, open-source music streaming application...",
-      TechStack: ["JavaScript", "HTML", "CSS", "Github", "Custom API", "NPM", "cssAnimation", "boxicons"],
+      TechStack: [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Github",
+        "Custom API",
+        "NPM",
+        "cssAnimation",
+        "boxicons",
+      ],
       Github: "https://github.com/alfaj7/SAP-Sultans_056.git",
       Website: "https://beet-pulse-music.netlify.app",
     },
@@ -28,7 +67,12 @@ const ProjectBox = ({ projectPhoto, projectName }) => {
   };
 
   const project = desc[projectName] || {};
-  const { Description = "", TechStack = [], Github = "", Website = "" } = project;
+  const {
+    Description = "",
+    TechStack = [],
+    Github = "",
+    Website = "",
+  } = project;
 
   return (
     <div className="project-item">
