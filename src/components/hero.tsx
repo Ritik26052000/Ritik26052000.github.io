@@ -1,15 +1,31 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { AnimatedGridBackground } from "@/components/ui/animated-grid-background";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { ArrowDown, Download, Mail } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
-import Typewriter from "typewriter-effect";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+
+const roles = [
+  "Full Stack Developer",
+  "Backend Architect",
+  "Node.js & React Expert",
+  "TypeScript Enthusiast",
+];
 
 export const Hero = () => {
+  const [currentRole, setCurrentRole] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToProjects = () => {
     document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -24,6 +40,22 @@ export const Hero = () => {
     document.body.removeChild(link);
   };
 
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  };
+
   return (
     <section
       id="home"
@@ -35,14 +67,14 @@ export const Hero = () => {
 
       <div className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center">
         {/* Left Content */}
-        <div className="w-full md:w-[50%] lg:w-[50%] flex flex-col items-start text-left pt-12 md:pt-0">
+        <motion.div 
+          className="w-full md:w-[50%] lg:w-[50%] flex flex-col items-start text-left pt-12 md:pt-0"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
           {/* Greeting badge */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mb-3 lg:mb-4"
-          >
+          <motion.div variants={itemVariants} className="mb-3 lg:mb-4">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/40 dark:border-purple-500/30 dark:border-purple-500/20 bg-purple-500/20 dark:bg-purple-500/10 dark:bg-purple-500/5 text-purple-700 dark:text-purple-300 text-sm font-medium">
               <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
               Available for opportunities
@@ -50,53 +82,39 @@ export const Hero = () => {
           </motion.div>
 
           {/* Main heading */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-2"
-          >
+          <motion.div variants={itemVariants} className="mb-2">
             <span className="text-lg sm:text-xl text-muted-foreground font-medium">
               Hi there! 👋 I&apos;m
             </span>
           </motion.div>
 
-          <div className="text-left w-full">
+          <motion.div variants={itemVariants} className="text-left w-full">
             <TextGenerateEffect
               words="Ritik Sonwani"
               className="text-4xl sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl mb-1 lg:mb-2 text-left"
               duration={0.6}
             />
-          </div>
+          </motion.div>
 
-          {/* Typewriter */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.8 }}
-            className="text-lg sm:text-xl md:text-xl lg:text-2xl text-muted-foreground font-medium mb-3 lg:mb-4 h-6 lg:h-8"
-          >
-            <Typewriter
-              options={{
-                strings: [
-                  "Full Stack Developer",
-                  "Backend Architect",
-                  "Node.js & React Expert",
-                  "TypeScript Enthusiast",
-                ],
-                autoStart: true,
-                loop: true,
-                delay: 50,
-                deleteSpeed: 30,
-              }}
-            />
+          {/* Rotating Text using AnimatePresence */}
+          <motion.div variants={itemVariants} className="text-lg sm:text-xl md:text-xl lg:text-2xl text-muted-foreground font-medium mb-3 lg:mb-4 h-8 lg:h-10 relative w-full overflow-hidden flex items-center">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentRole}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+                className="absolute"
+              >
+                {roles[currentRole]}
+              </motion.div>
+            </AnimatePresence>
           </motion.div>
 
           {/* Summary */}
           <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 1 }}
+            variants={itemVariants}
             className="text-muted-foreground text-sm sm:text-base lg:text-lg max-w-lg lg:max-w-xl mb-4 lg:mb-6 leading-relaxed"
           >
             2+ years of experience building scalable web platforms with{" "}
@@ -109,12 +127,7 @@ export const Hero = () => {
           </motion.p>
 
           {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 1.2 }}
-            className="flex flex-col sm:flex-row gap-3 mb-6 lg:mb-8"
-          >
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3 mb-6 lg:mb-8">
             <Button
               size="lg"
               onClick={scrollToProjects}
@@ -135,12 +148,7 @@ export const Hero = () => {
           </motion.div>
 
           {/* Social Links */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.4 }}
-            className="flex gap-4"
-          >
+          <motion.div variants={itemVariants} className="flex gap-4">
             {[
               {
                 icon: GithubIcon,
@@ -170,7 +178,7 @@ export const Hero = () => {
               </a>
             ))}
           </motion.div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Right Image */}

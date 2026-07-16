@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
